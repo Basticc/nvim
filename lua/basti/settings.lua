@@ -1,13 +1,17 @@
 -- Paths
-user_profile = os.getenv("HOMEPATH") 
-path_undodir = user_profile .. "\\AppData\\Local\\nvim\\lua\\basti\\undodir"
+local home_path    = os.getenv("HOMEPATH") 
+local path_undodir = home_path .. "\\AppData\\Local\\nvim\\lua\\basti\\undodir"
 
+--
+
+------------------------------------------------------------------------		
 -- Configuraciones
 
 -- La syntaxis de esto es vim.wo o vim.<esp>  donde la especificacion:
 -- esp == o significa que va a ser una configuracion global
 -- esp == opt  ? 
 -- esp == wo una configuracion local de la ventana!
+
 
 
 -------------------------- Aspectos generales --------------------------
@@ -66,17 +70,14 @@ vim.opt.undofile = true
 
 ------------------------------------------------------------------------		
 
-
-
 --- Smart search
+
 ------------------------------------------------------------------------		
 
--- pendiente comentar
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 ------------------------------------------------------------------------		
-
 
 --- Scroll
 
@@ -86,18 +87,14 @@ vim.opt.scrolloff = 8
 -- vim.opt.signcolumn= "yes"
 -- vim.opt.isfname:apppend("@-@")
 
-
 ------------------------------------------------------------------------		
-
-
-
 
 --- MISC
 
 ------------------------------------------------------------------------		
 vim.opt.termguicolors = true
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "85"
 
 -- Anexo
 

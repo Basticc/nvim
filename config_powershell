@@ -1,0 +1,19 @@
+function Prompt {
+    $currentDir = Split-Path -Leaf (Get-Location).Path
+    "basti\$currentDir> "
+}
+
+# Colores disponibles en la powershell
+$colors = @("Black", "DarkBlue", "DarkGreen", "DarkCyan", "DarkRed", 
+            "DarkMagenta", "DarkYellow", "Gray","DarkGray", "Blue", 
+            "Green", "Cyan", "Red", "Magenta", "Yellow", "White")
+
+# Seleccionar un color al azar
+$randomColor = Get-Random -InputObject $colors
+
+
+Write-Host "Recuerda:
+            - Nueva ventana: Ctrl + Shift  + T 
+            - Nuevo panel  : Alt  + Shift  + {+-}
+            - Cerrar panel : Ctrl + Shift  + W"-ForegroundColor $randomColor 
+
