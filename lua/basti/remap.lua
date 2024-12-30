@@ -1,3 +1,8 @@
+--  Información util sobre el remap noremap etc..
+-- https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping
+--
+--
+--
 -- Tecla lider, para iniciar un comando
 vim.g.mapleader = " "
 
@@ -52,7 +57,26 @@ vim.keymap.set('i', '<right>', '<cmd>echo "USAR h para mover!!"<CR>')
 vim.keymap.set('i', '<down>', '<cmd>echo "USAR j para mover!!"<CR>')
 vim.keymap.set('i', '<up>', '<cmd>echo "USAR k para mover!!"<CR>')
 
+-- Moverse entre parrafos manteniendo el cursor centrado
+
+vim.keymap.set("n","}", "}zz", {noremap = true})
+vim.keymap.set("n","{", "{zz", {noremap = true})
+
 -- 
+
+
+function echo_word ()
+    word = vim.fn.expand('<cword>')
+   -- print(word)
+    cursor_position = vim.api.nvim_win_get_cursor(0)
+    print(cursor_position[2])
+
+end
+   
+vim.keymap.set("n","<leader>ll", echo_word)
+--
+--
+--
 -- vim.keymap.set("n","<leader>d", "\"_d")
 -- vim.keymap.set("v","<leader>d", "\"_d")
 
