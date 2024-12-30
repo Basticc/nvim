@@ -40,7 +40,17 @@ vim.keymap.set("n", "<leader>Y", "\"+y") -- Copiar en modo normal al clipboard
 
 --
 
+-- Deshabilitar las flechas
+vim.keymap.set('n', '<left>', '<cmd>echo "USAR l para mover!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "USAR h para mover!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "USAR j para mover!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "USAR k para mover!!"<CR>')
 
+-- Deshabilitar las flechas en insertmode
+vim.keymap.set('i', '<left>', '<cmd>echo "USAR l para mover!!"<CR>')
+vim.keymap.set('i', '<right>', '<cmd>echo "USAR h para mover!!"<CR>')
+vim.keymap.set('i', '<down>', '<cmd>echo "USAR j para mover!!"<CR>')
+vim.keymap.set('i', '<up>', '<cmd>echo "USAR k para mover!!"<CR>')
 
 -- 
 -- vim.keymap.set("n","<leader>d", "\"_d")

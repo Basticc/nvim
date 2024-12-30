@@ -74,8 +74,17 @@ vim.opt.undofile = true
 
 ------------------------------------------------------------------------		
 
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+vim.opt.hlsearch   = true
+vim.opt.incsearch  = true
+
+
+-- Ignorar mayusuclas a no ser que empecemos a buscar con mayusculas 
+vim.opt.ignorecase = true
+vim.opt.smartcase  = true
+
+-- Cuando queramos dejar de buscar presionamos <ESC> para dejar de 
+-- tener en highlight las busquedas
+vim.keymap.set("n","<ESC>","<cmd>noh<CR>")
 
 ------------------------------------------------------------------------		
 
@@ -123,6 +132,7 @@ if (x > 0) {
 Pero usaremos smartautoindent pues se aplica a mas casos
 --------------------------------------------------------
 --]]
+
 
 
 
