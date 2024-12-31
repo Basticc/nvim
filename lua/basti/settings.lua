@@ -1,10 +1,12 @@
 -- Paths
 local home_path    = os.getenv("HOMEPATH") 
-local path_undodir = home_path .. "\\AppData\\Local\\nvim\\lua\\basti\\undodir"
+local path_undodir = home_path .. "\\undodir"
 
---
-
-------------------------------------------------------------------------		
+print(home_path)
+----
+---
+---
+----------------------------------------------------------------------		
 -- Configuraciones
 
 -- La syntaxis de esto es vim.wo o vim.<esp>  donde la especificacion:
@@ -15,7 +17,15 @@ local path_undodir = home_path .. "\\AppData\\Local\\nvim\\lua\\basti\\undodir"
 
 
 -------------------------- Aspectos generales --------------------------
+--                          Coolorscheme
+--
 
+-- vim.cmd.colorscheme = "cyberdream"
+--
+
+--vim.cmd("colorscheme cyberdream")
+
+--vim.cmd("colorscheme cyberdream")
 
 ---                           Numeracion
 
@@ -132,7 +142,16 @@ if (x > 0) {
 Pero usaremos smartautoindent pues se aplica a mas casos
 --------------------------------------------------------
 --]]
+--
 
+-- Transparencia
+--
 
-
+-- Configurar Neovim para que tenga un fondo transparente
+vim.cmd([[
+  autocmd VimEnter * hi Normal ctermbg=none guibg=none
+  autocmd VimEnter * hi VertSplit ctermbg=none guibg=none
+  autocmd VimEnter * hi StatusLine ctermbg=none guibg=none
+  autocmd VimEnter * hi TabLine ctermbg=none guibg=none
+]])
 

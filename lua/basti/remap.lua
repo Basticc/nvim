@@ -74,9 +74,12 @@ function echo_word ()
 end
    
 vim.keymap.set("n","<leader>ll", echo_word)
+vim.keymap.set("n","<leader>w", ":silent w<CR>")
 
-vim.keymap.set("n","<leader>w", ":w<CR>")
+
 vim.keymap.set("n","<leader>q", ":q<CR>")
+vim.keymap.set("n","<leader>s", ":so<CR>")
+--vim.keymap.set("n","<leader>s", ":so<CR>")
 --
 --
 --
