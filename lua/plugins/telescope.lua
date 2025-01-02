@@ -1,24 +1,4 @@
 return {
-
------------------------ COLORSCHEME CYBERDREAM
-    {
-    "scottmckendry/cyberdream.nvim",
-    config = function() vim.cmd.colorscheme "cyberdream" end,
-    lazy = false,
-    priority = 1000,
-    },
-
-
--- vim.fn.stdpath() funcion que retorna la ruta de un directorio estandar
--- ejemplo fn.stdpath('config') retornara en este caso 
--- 'C:\Users\basti\AppData\Local\nvim'
---
--- Observacion: si queremos copiar un output de un echo por ejemplo de un comando
--- podemos hacer :let @+= comando
--- ejemplo en este caso hice :let @+= stdpath('config')
-
-
-
 -------------------------------- TELESCOPE
     {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
@@ -41,23 +21,24 @@ return {
 
 
 
-  },
+    {
+    },
+
+},
+
+
+
     config =function()
         vim.keymap.set("n", "<leader>fd", require('telescope.builtin').find_files) 
+        vim.keymap.set("n", "<leader>fp", function()
+            require('telescope.builtin').find_files {
+            cwd = vim.fn.stdpath('config') .. "\\lua\\plugins"}
+        end)
         vim.keymap.set("n", "<leader>fs", function()
             require('telescope.builtin').find_files {
-            cwd = vim.fn.stdpath('config')}
+            cwd = vim.fn.stdpath('config')} 
         end)
     end,
- },
- 
-
-
- ------------------------------ TREESITTER
-    {
-        {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
-    }
-
-
 
 }
+} 

@@ -1,8 +1,10 @@
 -- Paths
 local home_path    = os.getenv("HOMEPATH") 
 local path_undodir = home_path .. "\\undodir"
+local test = vim.fn.stdpath('config')
+vim.g.python3_host_prog = 'C:\\Users\\basti\\miniforge-pypy3\\python3.EXE'
 
-print(home_path)
+print(test .. "\\lua\\plugins")
 ----
 ---
 ---
