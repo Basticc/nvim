@@ -1,7 +1,4 @@
-
-
 return {
-    
 -------------------------------- TELESCOPE
     {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
@@ -33,6 +30,7 @@ return {
     config =function()
         vim.keymap.set("n", "<leader>fd", require('telescope.builtin').find_files)
         vim.keymap.set("n", "<leader>fp", function()
+            -- Verificamos el sistema operativo
             if package.config:sub(1, 1) == '\\' then
                 PLUGINS = "\\lua\\plugins"
             else

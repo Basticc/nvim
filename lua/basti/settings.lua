@@ -1,28 +1,14 @@
--- Paths
--- local home_path    = os.getenv("HOMEPATH") 
--- local test = vim.fn.stdpath('config')
--- local path_undodir = home_path .. "\\undodir"
--- vim.g.python3_host_prog = 'C:\\Users\\basti\\miniforge-pypy3\\python3.EXE'
-
+---------------------------- Paths ------------------------------------
 -- Detectamos el sistema operativo, si es windows o linux
 -- https://stackoverflow.com/questions/295052/how-can-i-determine-the-os-of-the-system-from-within-a-lua-script
 if package.config:sub(1,1) == '\\'
-    then print("windows")
-    local home_path    = os.getenv("HOMEPATH") 
-    local path_undodir = home_path .. "\\undodir"
-    local test = vim.fn.stdpath('config')
+    then local home_path    = os.getenv("HOMEPATH")
+    PATH_UNDODIR = home_path .. "\\undodir"
     vim.g.python3_host_prog = 'C:\\Users\\basti\\miniforge-pypy3\\python3.EXE'
 else
-    print("linux")
     local home_path = os.getenv("HOME")
-    local path_undodir = home_path .. "/.config/undodir"
-    local test = vim.fn.stdpath('config')
+    PATH_UNDODIR = home_path .. "/.config/undodir"
 end
-    
--- print(test .. "\\lua\\plugins")
-----
----
----
 ----------------------------------------------------------------------		
 -- Configuraciones
 
@@ -91,7 +77,7 @@ vim.opt.backup   = false
 
 -- Directorio donde se guardara los comandos que se han hecho para 
 -- deshacer
-vim.opt.undodir  = path_undodir
+vim.opt.undodir  = PATH_UNDODIR
 
 vim.opt.undofile = true
 

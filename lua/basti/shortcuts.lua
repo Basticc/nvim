@@ -1,8 +1,7 @@
 local path_config= vim.fn.stdpath('config')
 local config_path, config_lazy
 if package.config:sub(1,1) == '\\'
-    then 
-    config_path  = path_config.. "\\lua\\basti"
+    then config_path  = path_config.. "\\lua\\basti"
     config_lazy  = path_config.. "\\lua\\plugins"
 else
     config_path = path_config .. "/lua/basti"
