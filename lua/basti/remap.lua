@@ -88,6 +88,14 @@ vim.keymap.set("n","<leader>ch", ":checkhealth<CR>")
 vim.keymap.set('n', '<leader>cc', 'i""""""<Esc>hhi<CR><Esc>O', { noremap = true })
 
 
+
+
+vim.keymap.set("n","<leader>lz",":Lazy<CR>", { noremap = true})
+
+
+
+
+
 --
 --
 --
