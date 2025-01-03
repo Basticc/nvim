@@ -1,6 +1,15 @@
-local user_profile = os.getenv("USERPROFILE")
-local config_path  = user_profile .. "\\AppData\\Local\\nvim\\lua\\basti"
-local config_lazy  = user_profile .. "\\AppData\\Local\\nvim\\lua\\lazy"
+local path_config= vim.fn.stdpath('config')
+local config_path, config_lazy
+if package.config:sub(1,1) == '\\'
+    then 
+    config_path  = path_config.. "\\lua\\basti"
+    config_lazy  = path_config.. "\\lua\\plugins"
+else
+    config_path = path_config .. "/lua/basti"
+    config_lazy  = path_config .. "/lua/plugins"
+end
+
+
 ---
 ------------------------------------------------------------------------		
 --- Shortcuts

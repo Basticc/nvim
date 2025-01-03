@@ -1,10 +1,25 @@
 -- Paths
-local home_path    = os.getenv("HOMEPATH") 
-local path_undodir = home_path .. "\\undodir"
-local test = vim.fn.stdpath('config')
-vim.g.python3_host_prog = 'C:\\Users\\basti\\miniforge-pypy3\\python3.EXE'
+-- local home_path    = os.getenv("HOMEPATH") 
+-- local test = vim.fn.stdpath('config')
+-- local path_undodir = home_path .. "\\undodir"
+-- vim.g.python3_host_prog = 'C:\\Users\\basti\\miniforge-pypy3\\python3.EXE'
 
-print(test .. "\\lua\\plugins")
+-- Detectamos el sistema operativo, si es windows o linux
+-- https://stackoverflow.com/questions/295052/how-can-i-determine-the-os-of-the-system-from-within-a-lua-script
+if package.config:sub(1,1) == '\\'
+    then print("windows")
+    local home_path    = os.getenv("HOMEPATH") 
+    local path_undodir = home_path .. "\\undodir"
+    local test = vim.fn.stdpath('config')
+    vim.g.python3_host_prog = 'C:\\Users\\basti\\miniforge-pypy3\\python3.EXE'
+else
+    print("linux")
+    local home_path = os.getenv("HOME")
+    local path_undodir = home_path .. "/.config/undodir"
+    local test = vim.fn.stdpath('config')
+end
+    
+-- print(test .. "\\lua\\plugins")
 ----
 ---
 ---

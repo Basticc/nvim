@@ -81,6 +81,19 @@ vim.keymap.set("n","<leader>q", ":q<CR>")
 vim.keymap.set("n","<leader>s", ":so<CR>")
 
 vim.keymap.set("n","<leader>ch", ":checkhealth<CR>")
+
+
+
+--vim.keymap.set('n', '<leader>gp', 'i""""""<Esc>', { noremap = true })
+vim.keymap.set('n', '<leader>cc', 'i""""""<Esc>hhi<CR><Esc>O', { noremap = true })
+
+
+--
+--
+--
+--
+--
+--
 --vim.keymap.set("n","<leader>s", ":so<CR>")
 --
 --

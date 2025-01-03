@@ -1,9 +1,12 @@
+
+
 return {
+    
 -------------------------------- TELESCOPE
     {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
 -- or                              , branch = '0.1.x',
-      dependencies = 
+      dependencies =
       { 'nvim-lua/plenary.nvim',
       {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' } 
 
@@ -27,18 +30,22 @@ return {
 },
 
 
-
     config =function()
-        vim.keymap.set("n", "<leader>fd", require('telescope.builtin').find_files) 
+        vim.keymap.set("n", "<leader>fd", require('telescope.builtin').find_files)
         vim.keymap.set("n", "<leader>fp", function()
+            if package.config:sub(1, 1) == '\\' then
+                PLUGINS = "\\lua\\plugins"
+            else
+                PLUGINS="/lua/plugins"
+            end
             require('telescope.builtin').find_files {
-            cwd = vim.fn.stdpath('config') .. "\\lua\\plugins"}
+            cwd = vim.fn.stdpath('config') .. PLUGINS}
         end)
         vim.keymap.set("n", "<leader>fs", function()
             require('telescope.builtin').find_files {
-            cwd = vim.fn.stdpath('config')} 
+            cwd = vim.fn.stdpath('config')}
         end)
     end,
 
 }
-} 
+}
