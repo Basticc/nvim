@@ -1,3 +1,6 @@
+---kajdkafjsdk
+---asjkdfksaj 
+---asdjfk 
 ---------------------------- Paths ------------------------------------
 -- Detectamos el sistema operativo, si es windows o linux
 -- https://stackoverflow.com/questions/295052/how-can-i-determine-the-os-of-the-system-from-within-a-lua-script
