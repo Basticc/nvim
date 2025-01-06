@@ -97,3 +97,9 @@ caracter en particular, por ejemplo
 Intenta cambiar los argumentos, es `r<letra_correcta>`
 
 
+# cw, c$, etc... c + 
+
+Cambiar la palabra en la cual esta el cursor actualmente
+y quedar en modo insert
+
+

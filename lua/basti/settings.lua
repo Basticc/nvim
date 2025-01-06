@@ -21,7 +21,6 @@ end
 -- esp == wo una configuracion local de la ventana!
 
 
-
 -------------------------- Aspectos generales --------------------------
 --                          Coolorscheme
 --
